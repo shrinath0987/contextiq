@@ -3,6 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import anthropic
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 app = FastAPI()
 
@@ -13,9 +15,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-client = anthropic.Anthropic(api_key="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")
-
-sessions = {}
+client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
 
 SYSTEM_PROMPT = """You are ContextIQ, an intelligent AI assistant.
 You are helpful, concise and friendly.
