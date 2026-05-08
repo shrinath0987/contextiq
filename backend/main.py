@@ -6,6 +6,8 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+sessions = {}
+
 app = FastAPI()
 
 app.add_middleware(
