@@ -16,8 +16,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY", "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"))
-class ChatRequest(BaseModel):
+client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))class ChatRequest(BaseModel):
     message: str
 
 @app.get("/health")
