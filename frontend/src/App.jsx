@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 
-const API = "http://127.0.0.1:8000";
+const API = "https://contextiq-production-9ecd.up.railway.app";
 const SESSION = "user_" + Math.random().toString(36).substr(2, 9);
 
 export default function App() {
@@ -37,7 +37,7 @@ export default function App() {
       setQuestions(data.questions || []);
       setMessages([{
         role: "assistant",
-        content: `✅ **${file.name}** uploaded!\n\n📋 **Summary:** ${data.summary}`
+      content: `✅ **${file.name}** uploaded!\n\n📋 **Summary:** ${data.summary || "Document ready! Ask me anything."}`
       }]);
     } catch (err) {
       setMessages([{
