@@ -23,7 +23,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-client = anthropic.Anthropic(api_key="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")
+client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
 chroma_client = chromadb.Client()
 embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 
