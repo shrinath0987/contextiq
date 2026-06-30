@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 
-const API = "https://contextiq-production-9ecd.up.railway.app";
+const API = "https://shrinath1233-contextiq-backend-v2.hf.space";
 const SESSION = "user_" + Math.random().toString(36).substr(2, 9);
 
 export default function App() {
